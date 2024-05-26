@@ -11,19 +11,19 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/qualidade-ar")
+@RequestMapping("/api")
 public class LeituraQualidadeArController {
 
     @Autowired
     private LeituraQualidadeArRepository leituraQualidadeArRepository;
 
-    @GetMapping()
+    @GetMapping("/qualidade-ar")
     public ResponseEntity<List<LeituraQualidadeAr>> findAll(){
         List<LeituraQualidadeAr> leituras = leituraQualidadeArRepository.findAll();
         return ResponseEntity.ok(leituras);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/qualidade-ar/{id}")
     public ResponseEntity<LeituraQualidadeAr> findById(@PathVariable Long id) {
         LeituraQualidadeAr leitura = leituraQualidadeArRepository.findById(id).orElse(null);
         if (leitura == null) {
@@ -32,19 +32,20 @@ public class LeituraQualidadeArController {
         return ResponseEntity.ok(leitura);
     }
 
+    @PostMapping("/qualidade-ar")
     public ResponseEntity<LeituraQualidadeAr> save(@Valid @RequestBody LeituraQualidadeAr leitura) {
         LeituraQualidadeAr novaLeitura = leituraQualidadeArRepository.save(leitura);
         return ResponseEntity.status(HttpStatus.CREATED).body(novaLeitura);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/qualidade-ar/{id}")
     public ResponseEntity<LeituraQualidadeAr> update(@PathVariable Long id, @Valid @RequestBody LeituraQualidadeAr leitura) {
         leitura.setId(id);
         LeituraQualidadeAr leituraAtualizada = leituraQualidadeArRepository.save(leitura);
         return ResponseEntity.ok(leituraAtualizada);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/qualidade-ar/{id}")
     public ResponseEntity delete(@PathVariable Long id) {
         leituraQualidadeArRepository.deleteById(id);
         return ResponseEntity.noContent().build();

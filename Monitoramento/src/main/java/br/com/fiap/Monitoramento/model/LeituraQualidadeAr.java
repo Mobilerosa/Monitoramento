@@ -32,11 +32,8 @@ public class LeituraQualidadeAr {
     private LocalDate dataLeitura;
 
     private Double pm25;
-
     private Double pm10;
-
     private Double no2;
-
     private Double o3;
 
     @Column(name = "local_monitoramento_id")
