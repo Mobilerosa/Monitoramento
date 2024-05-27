@@ -34,9 +34,9 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.POST, "/auth/login").permitAll()
                         .requestMatchers(HttpMethod.POST, "/auth/register").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/usuarios").permitAll()
-                        .requestMatchers(HttpMethod.DELETE, "/api/usuarios/{usuarioId}").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.PUT, "/api/usuarios").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.GET, "/api/usuarios").hasAnyRole("ADMIN", "USER")
+                        .requestMatchers(HttpMethod.DELETE, "/api/usuarios/{usuarioId}").permitAll()
+                        .requestMatchers(HttpMethod.PUT, "/api/usuarios").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/usuarios").permitAll()
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(

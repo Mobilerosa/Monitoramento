@@ -23,8 +23,8 @@ public class Usuario {
             sequenceName = "SEQ_USUARIOS",
             allocationSize = 1
     )
-    @Column(name = "usuario_id")
-    private Long usuarioId;
+    @Column(name = "id")
+    private Long id;
 
     private String nome;
     private String email;
