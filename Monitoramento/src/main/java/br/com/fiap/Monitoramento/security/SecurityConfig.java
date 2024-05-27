@@ -37,6 +37,11 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.DELETE, "/api/usuarios/{usuarioId}").permitAll()
                         .requestMatchers(HttpMethod.PUT, "/api/usuarios").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/usuarios").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/qualidade-ar").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/qualidade-ar/{id}").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/api/qualidade-ar").permitAll()
+                        .requestMatchers(HttpMethod.PUT, "/api/qualidade-ar/{id}").permitAll()
+                        .requestMatchers(HttpMethod.DELETE, "/api/qualidade-ar/{id}").permitAll()
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(

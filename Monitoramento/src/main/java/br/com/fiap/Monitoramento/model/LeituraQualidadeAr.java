@@ -25,7 +25,7 @@ public class LeituraQualidadeAr {
             sequenceName = "SEQ_QUALIDADE_AR",
             allocationSize = 1
     )
-    @Column(name = "leitura_qualidade_ar_id")
+    @Column(name = "id")
     private Long id;
 
     @Column(name = "data_leitura")
