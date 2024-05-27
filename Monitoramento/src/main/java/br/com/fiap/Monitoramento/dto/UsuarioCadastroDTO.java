@@ -1,5 +1,6 @@
 package br.com.fiap.Monitoramento.dto;
 
+import br.com.fiap.Monitoramento.model.UsuarioRole;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -24,5 +25,6 @@ public record UsuarioCadastroDTO(
         String senha,
 
         UsuarioRole role
+
 ) {
 }
